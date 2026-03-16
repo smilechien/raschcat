@@ -1,0 +1,8 @@
+service: raschcat
+runtime: python311
+env: standard
+entrypoint: gunicorn -b :$PORT raschcat:app --timeout 120
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2
